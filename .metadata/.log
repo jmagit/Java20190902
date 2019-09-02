@@ -36,3 +36,66 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-09-02 12:35:11.022
+!MESSAGE No repository found at https://download.eclipse.org/m2e-wtp/releases/signed/mavenarchiver/0.17.3/.
+
+!ENTRY org.eclipse.ui 2 2 2019-09-02 13:09:07.442
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:10:37.188
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:10:37.189
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@4512af0e[org.springframework.tooling.boot.ls:1.8.0.201906200642(id=1110)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:10:37.191
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:10:37.250
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.520
+!MESSAGE Boot LS startup time from start to initialized: 3045ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.545
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CUQRtiLDisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.546
+!MESSAGE subscribing to classpath changes: sts4.classpath.CUQRtiLD isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.547
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.549
+!MESSAGE subsribers = {sts4.classpath.CUQRtiLD=Send Classpath Notifications(1014)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.550
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.553
+!MESSAGE project demos ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.555
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.557
+!MESSAGE Preparing classpath changed notification demos
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.557
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CUQRtiLD => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.558
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.565
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.566
+!MESSAGE buffering callback sts4.classpath.CUQRtiLD demos false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.567
+!MESSAGE executing callback sts4.classpath.CUQRtiLD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-09-02 13:12:21.611
+!MESSAGE executing callback sts4.classpath.CUQRtiLD SUCCESS [done]

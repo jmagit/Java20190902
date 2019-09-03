@@ -1,15 +1,41 @@
 package demos;
 
 public class Principal {
-
+	static {
+		System.out.println("Se carga la clase Principal");
+	}
 	public static void main(String[] args) {
 		int i;
-		Persona persona = new Alumno();
+		IPersonas persona = new Alumno();
 		persona.setNombre("Pepito");
+		System.out.println(Persona.getCount());
 		i = persona.valoracion();
 		//((Alumno)persona).set
 		//persona = new Profesor("Pepito", "Grillo");
+		persona = null;
+		System.runFinalization();
+		System.out.println(Persona.getCount());
+		
 		persona = Profesor.create();
+		persona = null;
+		System.gc();
+		System.out.println(Persona.getCount());
+		
+		Nominal n = Profesor.create();
+		System.out.println(n.getNombre());
+		n = new Alumno("Alumno", "uno");
+		System.out.println(n.getNombre());
+		n = new Curso();
+		n.setNombre("Java");
+		System.out.println(n.getNombre());
+		
+		Object o = new Alumno("Alumno", "uno");
+		// ...
+		
+		if(o instanceof Nominal) {
+			System.out.println(((Nominal)o).getNombreCompleto());
+		}
+		System.out.println(Calcula.divide(1, 0));
 	}
 
 	public static void ejemplos1(String[] args) {

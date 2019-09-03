@@ -18,5 +18,14 @@ public class Alumno extends Persona {
 	public void setNombre(String valor) {
 		super.setNombre(valor.toUpperCase());
 	}
+	@Override
+	public String getApellidos() {
+		
+		return apellidos;
+	}
+	@Override
+	public String getNombreCompleto() {
+		return getNombre() + " " + getApellidos();
+	}
 
 }

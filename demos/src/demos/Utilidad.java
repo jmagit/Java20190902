@@ -1,6 +1,9 @@
 package demos;
 
 public final class Utilidad {
+	static {
+		System.out.println("Se carga la clase Utilidad");
+	}
 	private Utilidad() {}
 	public static double avg(long primero, long... valores) {
 		//if(valores.length == 0) return 0;

@@ -1,13 +1,16 @@
 package com.ibermatica.curso.modelos;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import com.ibermatica.curso.IPersonas;
 import com.ibermatica.curso.Nominal;
+import com.ibermatica.curso.exceptions.DemoException;
 
 public abstract class Persona implements Nominal, IPersonas {
 	private static int count = 0;
 	
-	public final int MAXLEN_NOMBRE = 50;
-	
+	public final int MAXLEN_NOMBRE = 20;
+	@XmlAttribute
 	private String nombre;
 	protected String apellidos;
 	
@@ -22,10 +25,14 @@ public abstract class Persona implements Nominal, IPersonas {
 		return nombre;
 	}
 	@Override
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) throws DemoException {
+		if(nombre == null)
+			throw new DemoException("Falta el nombre");
 		if(nombre.length() <= MAXLEN_NOMBRE)
 			this.nombre = nombre;	
-		// clone(this);
+		else {
+			throw new DemoException("Nombre muy largo");
+		}
 	}
 	
 	@Override

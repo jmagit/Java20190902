@@ -1,5 +1,6 @@
 package com.ibermatica.curso;
 
+import com.ibermatica.curso.exceptions.DemoException;
 import com.ibermatica.curso.modelos.*;
 import com.ibermatica.curso.utilidades.Utilidad;
 
@@ -7,23 +8,41 @@ public class Principal {
 	static {
 		System.out.println("Se carga la clase Principal");
 	}
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws Exception {
 		int i;
 		IPersonas persona = new Alumno();
-		persona.setNombre("Pepito");
+		try {
+			persona.setNombre("Pepito");
+			//persona.setNombre("Pepito00000000000000000000000000000000000000000000000000000000000");
+			persona.setNombre(null);
+		} catch (DemoException|NullPointerException e) {
+			//e.printStackTrace();
+			throw new DemoException("No puedo seguir", e);
+//		} catch (NullPointerException e) {
+//			//e.printStackTrace();
+//			throw new DemoException("Falta el nombre", e);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new DemoException("Sin tipo", e);
+		}
+		
+//		Class c = persona.getClass();
+//		c.getAnnotations()
+		
 		System.out.println(Persona.getCount());
 		i = persona.valoracion();
-		//((Alumno)persona).set
-		//persona = new Profesor("Pepito", "Grillo");
+		// ((Alumno)persona).set
+		// persona = new Profesor("Pepito", "Grillo");
 		persona = null;
 		System.runFinalization();
 		System.out.println(Persona.getCount());
-		
+
 		persona = Profesor.create();
 		persona = null;
 		System.gc();
 		System.out.println(Persona.getCount());
-		
+
 		Nominal n = Profesor.create();
 		System.out.println(n.getNombre());
 		n = new Alumno("Alumno", "uno");
@@ -31,16 +50,16 @@ public class Principal {
 		n = new Curso();
 		n.setNombre("Java");
 		System.out.println(n.getNombre());
-		
+
 		Object o = new Alumno("Alumno", "uno");
 		// ...
-		
-		if(o instanceof Nominal) {
-			System.out.println(((Nominal)o).getNombreCompleto());
+
+		if (o instanceof Nominal) {
+			System.out.println(((Nominal) o).getNombreCompleto());
 		}
 		System.out.println(Calcula.divide(1, 0));
 		Elemento<Integer> provincia = new Elemento<Integer>(28, "Madrid");
-		Elemento<Character> estadoElemento = new Elemento<Character>('M', "Matriculado"); 
+		Elemento<Character> estadoElemento = new Elemento<Character>('M', "Matriculado");
 		Curso curso = new Curso();
 		com.ibermatica.curso.utilidades.Curso otroCurso = new com.ibermatica.curso.utilidades.Curso();
 	}
@@ -129,19 +148,11 @@ public class Principal {
 		}
 		double d;
 		d = Utilidad.avg(1.0, 2.0);
-		d = Utilidad.avg((long)1, 2, 3);
+		d = Utilidad.avg((long) 1, 2, 3);
 		d = Utilidad.avg(1, 2, 3, 4, 5, 6);
 //		d = avg(1, new int[] {1,2,3});
 //		d = avg(new int[] {1,2,3});
 		d = Utilidad.avg("Algo");
 	}
 
-//	public static double avg(int... valores) {
-//		if(valores.length == 0) return 0;
-//		int rslt = 0;
-//		for (int i : valores) {
-//			rslt += i;
-//		}
-//		return (double)rslt / valores.length;
-//	}
 }

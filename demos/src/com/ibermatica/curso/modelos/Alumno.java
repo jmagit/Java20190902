@@ -1,5 +1,9 @@
 package com.ibermatica.curso.modelos;
 
+import com.ibermatica.curso.exceptions.DemoException;
+import com.ibermatica.curso.utilidades.Cerrar;
+
+@Cerrar
 public class Alumno extends Persona {
 
 	public Alumno(String nombre, String apellidos) {
@@ -15,7 +19,10 @@ public class Alumno extends Persona {
 		return 10;
 	}
 
-	public void setNombre(String valor) {
+	public void setNombre(String valor) throws DemoException {
+		assert valor != null;
+//		if(valor == null)
+//			throw new DemoException("Falta el nombre");
 		super.setNombre(valor.toUpperCase());
 	}
 	@Override

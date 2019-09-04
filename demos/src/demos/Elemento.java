@@ -21,6 +21,4 @@ public class Elemento<K> {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	
-	
 }

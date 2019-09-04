@@ -36,9 +36,9 @@ public class Principal {
 			System.out.println(((Nominal)o).getNombreCompleto());
 		}
 		System.out.println(Calcula.divide(1, 0));
-		
 		Elemento<Integer> provincia = new Elemento<Integer>(28, "Madrid");
 		Elemento<Character> estadoElemento = new Elemento<Character>('M', "Matriculado"); 
+		
 	}
 
 	public static void ejemplos1(String[] args) {

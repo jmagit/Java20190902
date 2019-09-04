@@ -6,24 +6,63 @@ import com.ibermatica.curso.IPersonas;
 import com.ibermatica.curso.Nominal;
 import com.ibermatica.curso.exceptions.DemoException;
 
+/**
+ * Clase base para las Personas
+ * @author Javier
+ * @version 1.0
+ * @since 1.8
+ *
+ */
 public abstract class Persona implements Nominal, IPersonas {
 	private static int count = 0;
 	
+	private int idPersona = 0;
+	
+	public int getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
+	}
+
+	/**
+	 * Longintud máxima del nombre 
+	 */
 	public final int MAXLEN_NOMBRE = 20;
-	@XmlAttribute
+	/**
+	 * Nombre propio de la persona
+	 */
 	private String nombre;
+	/**
+	 * Apellidos separado por espacios de la persona
+	 */
 	protected String apellidos;
 	
+	/**
+	 * Es obligatorio disponer de nombre y apellidos para disponer de una personas
+	 * @param nombre Nombre propio de la persona, es obligatorio
+	 * @param apellidos Apellidos separado por espacios de la persona, es obligatorio
+	 */
 	public Persona(String nombre, String apellidos) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		count ++;
 	}
 	
+	/**
+	 * Obtiene el nombre propio de la persona
+	 * @return el nombre propio de la persona
+	 */
 	@Override
 	public final String getNombre() {
 		return nombre;
 	}
+	/**
+	 * Modifica el nombre propio de la persona @see Persona#MAXLEN_NOMBRE
+	 * @param nombre Nombre propio de la persona, es obligatorio
+	 * @exception DemoException Si el nombre es nulo o supera MAXLEN_NOMBRE 
+	 */
 	@Override
 	public void setNombre(String nombre) throws DemoException {
 		if(nombre == null)
@@ -53,4 +92,33 @@ public abstract class Persona implements Nominal, IPersonas {
 	public static int getCount() {
 		return count;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idPersona;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		if (idPersona != other.idPersona)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellidos=" + apellidos + "]";
+	}
+	
+	
 }

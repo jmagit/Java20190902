@@ -15,7 +15,7 @@ public class Principal {
 		try {
 			persona.setNombre("Pepito");
 			//persona.setNombre("Pepito00000000000000000000000000000000000000000000000000000000000");
-			persona.setNombre(null);
+			//persona.setNombre(null);
 		} catch (DemoException|NullPointerException e) {
 			//e.printStackTrace();
 			throw new DemoException("No puedo seguir", e);
@@ -39,7 +39,7 @@ public class Principal {
 		System.out.println(Persona.getCount());
 
 		persona = Profesor.create();
-		persona = null;
+		//persona = null;
 		System.gc();
 		System.out.println(Persona.getCount());
 
@@ -51,7 +51,11 @@ public class Principal {
 		n.setNombre("Java");
 		System.out.println(n.getNombre());
 
+		if (persona.equals(n)) {
+			
+		}
 		Object o = new Alumno("Alumno", "uno");
+		System.out.println(o);
 		// ...
 
 		if (o instanceof Nominal) {
@@ -59,6 +63,11 @@ public class Principal {
 		}
 		System.out.println(Calcula.divide(1, 0));
 		Elemento<Integer> provincia = new Elemento<Integer>(28, "Madrid");
+		int ii = provincia.getClave();
+		String c = "";
+		for(int f = 0; f < 100; f++)
+			c = c + "X";
+		
 		Elemento<Character> estadoElemento = new Elemento<Character>('M', "Matriculado");
 		Curso curso = new Curso();
 		com.ibermatica.curso.utilidades.Curso otroCurso = new com.ibermatica.curso.utilidades.Curso();

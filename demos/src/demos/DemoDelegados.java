@@ -1,8 +1,7 @@
 package demos;
 
-import java.awt.event.ItemEvent;
 
-public class kk {
+public class DemoDelegados {
 	@FunctionalInterface
 	interface Comparar {
 		int compara(String s1, String s2);

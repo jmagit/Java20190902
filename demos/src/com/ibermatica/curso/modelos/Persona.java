@@ -120,5 +120,10 @@ public abstract class Persona implements Nominal, IPersonas {
 		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellidos=" + apellidos + "]";
 	}
 	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
 	
 }

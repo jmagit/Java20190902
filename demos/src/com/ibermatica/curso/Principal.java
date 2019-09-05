@@ -1,5 +1,7 @@
 package com.ibermatica.curso;
 
+import java.util.Arrays;
+
 import com.ibermatica.curso.exceptions.DemoException;
 import com.ibermatica.curso.modelos.*;
 import com.ibermatica.curso.utilidades.Utilidad;
@@ -12,10 +14,11 @@ public class Principal {
 	public static void main(String[] args) throws Exception {
 		int i;
 		IPersonas persona = new Alumno();
+		
 		try {
 			persona.setNombre("Pepito");
 			//persona.setNombre("Pepito00000000000000000000000000000000000000000000000000000000000");
-			//persona.setNombre(null);
+			persona.setNombre(null);
 		} catch (DemoException|NullPointerException e) {
 			//e.printStackTrace();
 			throw new DemoException("No puedo seguir", e);
@@ -68,9 +71,30 @@ public class Principal {
 		for(int f = 0; f < 100; f++)
 			c = c + "X";
 		
+		StringBuilder sb = new StringBuilder();
+		for(int f = 0; f < 100; f++)
+			sb.append("X");
+		c = sb.toString();
+		
+		c = "+";
+		if ("+-*/=".contains(c)) {
+			// ¿Se ejecuta?
+		}
+		
 		Elemento<Character> estadoElemento = new Elemento<Character>('M', "Matriculado");
 		Curso curso = new Curso();
 		com.ibermatica.curso.utilidades.Curso otroCurso = new com.ibermatica.curso.utilidades.Curso();
+		
+		Mascota mascota1 = new Mascota();
+		mascota1.setDueño(new Alumno("Alumno", "uno"));
+		Mascota mascota2 = (Mascota)mascota1.clone();
+		mascota1.getDueño().setNombre("Otro");
+		// mascota1.getDueño().tieneMascota(false);
+		
+		Persona persona2 = mascota1.getDueño();		
+		persona2.setNombre("Otro");
+		mascota1.setDueño(persona2);
+		
 	}
 
 	public static void ejemplos1(String[] args) {

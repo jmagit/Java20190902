@@ -20,7 +20,7 @@ public class Alumno extends Persona {
 	}
 
 	public void setNombre(String valor) throws DemoException {
-		assert valor != null;
+		assert valor != null : "Falta el nombre";
 //		if(valor == null)
 //			throw new DemoException("Falta el nombre");
 		super.setNombre(valor.toUpperCase());

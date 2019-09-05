@@ -2,7 +2,7 @@ package com.ibermatica.curso;
 
 import com.ibermatica.curso.exceptions.DemoException;
 
-public interface IPersonas {
+public interface IPersonas extends Cloneable {
 
 	String getNombre();
 

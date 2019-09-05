@@ -21,7 +21,10 @@ public class Principal {
 			System.out.println("Perimetro: " + dibujo.getPerimetro()); 
 			System.out.println("\n\nEncontrado: " + dibujo.buscar(item -> 
 				item instanceof Circulo 
-				&& item.getColor() == Colores.NEGRO
+				&& 
+				((Circulo)item).getRadio() == 1
+//				item.getColor() == Colores.NEGRO
+//			item.getArea() == 11000
 				));
 		} catch (DibujoException e) {
 			e.printStackTrace();
